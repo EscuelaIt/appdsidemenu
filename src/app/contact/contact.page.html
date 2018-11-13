@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button (click)="show()">
+    Mostrar
+  </ion-button>
+  <ion-button (click)="hide()">
+    Ocultar
+  </ion-button>
+  <ion-button (click)="toggle()">
+    toggle
+  </ion-button>
+  <p *ngIf="showTwitter">
+    {{ twitter }}
+  </p>
+  <ion-item>
+    <ion-label position="floating">nueva tarea:</ion-label>
+    <ion-input [(ngModel)]="nuevaTarea" (keyup.enter)="addTask()"></ion-input>
+  </ion-item>
+  <ion-button (click)="addTask()">
+    add task
+  </ion-button>
+  <ion-list>
+    <ion-item *ngFor="let task of tasks">
+      {{ task }}
+    </ion-item>
+  </ion-list>
+</ion-content>
